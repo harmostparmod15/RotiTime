@@ -26,8 +26,16 @@ const Payment = () => {
       console.log("nl cart");
       navigate("/");
     }
-    handleAnimation();
+
+    const animationTimeOut = setTimeout(() => {
+      handleAnimation();
+    }, 200);
+
     handleClearCart();
+
+    return () => {
+      clearTimeout(animationTimeOut);
+    };
   }, []);
 
   return (

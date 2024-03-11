@@ -47,7 +47,18 @@ const appRouter = createBrowserRouter([
         path: "/cart",
         element: <Cart />,
       },
-
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/instamart",
+        element: <Instamart />,
+      },
       {
         path: "/payment",
         element: <Payment />,
