@@ -1,8 +1,9 @@
-import { API_URl } from "../utils/config.js";
-
 import { useDispatch, useSelector } from "react-redux";
-import { addRestaurantData } from "../utils/restaurantDataSlice.js";
 import { useEffect } from "react";
+
+// UTILS
+import { addRestaurantData } from "../utils/restaurantDataSlice.js";
+import { API_URl } from "../utils/config.js";
 
 // COMPONENTS
 import StarterRestaurants from "./StarterRestaurants";
@@ -12,7 +13,6 @@ import Shimmer from "./Shimmer.js";
 const Body = () => {
   const store = useSelector((store) => store?.restaurant?.restaurants);
 
-  //  getting all the restaurant and storing it in redux store
   const dispatch = useDispatch();
 
   async function getRestaurants() {

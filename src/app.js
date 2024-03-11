@@ -3,6 +3,7 @@ import ReactDom from "react-dom/client";
 
 import { Outlet, RouterProvider } from "react-router";
 import { createBrowserRouter } from "react-router-dom/dist";
+import { Provider } from "react-redux/dist/react-redux";
 
 import store from "./utils/store";
 
@@ -10,7 +11,7 @@ import store from "./utils/store";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Body from "./components/Body";
-import { Provider } from "react-redux/dist/react-redux";
+import RestaurantDetail from "./components/RestaurantDetail";
 
 const AppLayout = () => {
   return (
@@ -32,6 +33,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/",
         element: <Body />,
+      },
+      {
+        path: "/restaurant/:id",
+        element: <RestaurantDetail />,
       },
     ],
   },

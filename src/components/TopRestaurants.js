@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 // UTILS
 import { filterData } from "../utils/helper";
-
 import {
   addSearchedRestaurantData,
   clearSearchedRestaurantData,
