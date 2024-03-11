@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 
 // UTILS
 import useRestaurantDetail from "../utils/useRestaurantDetail";
+import { addItem } from "../utils/cartSlice";
 import { IMG_CDN_URL } from "../utils/config";
 
 const RestaurantDetail = () => {

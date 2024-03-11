@@ -26,6 +26,7 @@ const TopRestaurants = () => {
 
   const handleSearchRestaurant = (inputQuery) => {
     const data = filterData(inputQuery, topRestaurants);
+    console.log("sr rest", searchedRestaurant);
     // setFilteredRestaurants(data);
     dispatch(addSearchedRestaurantData(data));
     setAddBlur(true);
@@ -91,16 +92,13 @@ const TopRestaurants = () => {
       {addBlur && (
         <div
           onClick={handleClearSearchQuery}
-          className="p-12   absolute top-40 bg-opacity-40     w-full   bg-"
+          className="p-12   absolute top-40 bg-opacity-40      w-full   bg-"
         >
-          {/* <img
-            onClick={handleClearSearchQuery}
-            className="w-20 mx-auto cursor-pointer  "
-            src={closeBtn}
-          ></img> */}
           <div className="flex flex-wrap bg-white shadow-xl">
             {searchedRestaurant.map((rest) => (
-              <RestaurantCard key={rest?.info?.id} {...rest?.info} />
+              <Link to={"/restaurant/" + rest?.info?.id} key={rest?.info?.id}>
+                <RestaurantCard {...rest?.info} />
+              </Link>
             ))}
           </div>
         </div>

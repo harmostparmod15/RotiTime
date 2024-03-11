@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 // ASSETS
 import cartImg from "../assets/images/cart-logo.jpeg";
 import Titlelogo from "../assets/images/rotieTime-logo.png";
 
 const Header = () => {
+  const cartItems = useSelector((store) => store.cart.items);
+
   return (
     <div className="px-24  pt-2 top-0 sticky z-20   flex justify-between bg-slate-200    shadow-md font-poppins">
       {/*  TITLE  */}
@@ -50,6 +52,9 @@ const Header = () => {
                 className=" w-12 h-10 rounded-full relative "
                 src={cartImg}
               ></img>{" "}
+            </span>
+            <span className="cart-logo  text-white bg-red-500 rounded-full text-center h-7 w-7 ">
+              {cartItems.length}
             </span>
           </Link>
         </li>

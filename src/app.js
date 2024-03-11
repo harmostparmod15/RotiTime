@@ -12,6 +12,11 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import RestaurantDetail from "./components/RestaurantDetail";
+import Cart from "./components/Cart";
+import Instamart from "./components/Instamart";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Payment from "./components/Payment";
 
 const AppLayout = () => {
   return (
@@ -37,6 +42,15 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurant/:id",
         element: <RestaurantDetail />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+
+      {
+        path: "/payment",
+        element: <Payment />,
       },
     ],
   },
