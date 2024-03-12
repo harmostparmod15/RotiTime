@@ -39,7 +39,7 @@ const Payment = () => {
   }, []);
 
   return (
-    <div className="translate-y-96  viewport w-screen h-screen bg-green-400 text-7xl font-bold text-white flex flex-col justify-center items-center transition-all duration-700 ">
+    <div className="translate-y-96  viewport w-screen h-screen bg-green-400 text-2xl  md:text-7xl font-bold text-white flex flex-col justify-center items-center transition-all duration-700 ">
       <h1 className="scale-0 text transition-all duration-700">
         Your order is on its way
       </h1>

@@ -27,28 +27,25 @@ const Cart = () => {
   ) : (
     //  MAIN CART COMPONENT
     <div
-      className="w-5/12 border flex flex-col  mx-auto my-8 h-screen
+      className="w-10/12 md:w-5/12 border flex flex-col font-poppins  mx-auto my-8 h-screen  overflow-scroll  
     "
     >
       {/*  cart items count and clear all btn */}
-      <div className=" flex py-4 justify-between px-4">
-        <h1 className="font-extrabold font-poppins text-2xl">
-          cart items {cartItems.length}
+      <div className=" flex py-4 justify-between px-4 ">
+        <h1 className="font-extrabold  text-lg  md:text-2xl">
+          cart items &#40;{cartItems.length}&#41;
         </h1>
         {/*  clear all btn */}
         <button
-          className="bg-red-500 text-white px-8  h-10 rounded-md  hover:bg-white hover:text-red-500 hover:border  transition-all duration-500"
-          onClick={() => {
-            handleClearCart();
-            setCounter(0);
-          }}
+          className="bg-red-500  text-white md:px-8 w-3/12 h-10 rounded-md  hover:bg-white hover:text-red-500 hover:border  transition-all duration-500"
+          onClick={handleClearCart}
         >
-          clear all
+          Clear
         </button>
         {/* procedd to payment btn */}
         {cartItems.length !== 0 ? (
           <Link to={"/payment"}>
-            <button className="bg-green-500 px-4 py-2  text-white rounded-lg hover:scale-90 hover:rounded-lg transition-all duration-500">
+            <button className="bg-green-500  text-sm px-2  md:px-4 h-10  text-white rounded-lg hover:scale-90 hover:rounded-lg transition-all duration-500">
               Order now
             </button>
           </Link>
@@ -56,7 +53,7 @@ const Cart = () => {
       </div>
 
       {/*  cart items */}
-      <div className="flex h-40 w-full flex-wrap my-12">
+      <div className="flex h-40 w-full flex-wrap my-12 ">
         {cartItems.map((item) => (
           <FoodItem key={item?.card?.info?.id} {...item?.card?.info} />
         ))}

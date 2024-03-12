@@ -25,7 +25,7 @@ const RestaurantDetail = () => {
     <div className="flex flex-col font-poppins relative ">
       <div className="w-full">
         {/* HEADER AREA REST DETAILS BASIC */}
-        <div className="pt-8 flex justify-between  w-10/12 mx-auto border border-green-500 px-4 py-4 rounded-lg mt-10">
+        <div className="pt-8 flex justify-between w-10/12 mx-auto border border-green-500 px-4 py-4 rounded-lg mt-10">
           {/* RESTAURANT NAME AND AREA */}
           <div>
             <h2 className="text-xl font-bold bg-green-100">
@@ -52,23 +52,23 @@ const RestaurantDetail = () => {
           </div>
         </div>
 
-        {/*  IMAGE AND MENU SECTION */}
+        {/*   MENU SECTION */}
         <div className=" w-10/12 mx-auto flex flex-col  justify-around">
           <h1 className="my-12 font-bold text-4xl font-poppins text-center">
             MENU
           </h1>
 
           {/* MENU DETAILS */}
-          <div className="flex mx-auto w-10/12 ">
+          <div className="flex md:mx-auto max-w-screen  md:w-10/12  ">
             {/*  new design */}
-            <div className=" w-full flex flex-col justify-between font-poppins">
+            <div className=" w-screen flex flex-col  justify-between font-poppins">
               {(restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards).map(
                 (item) => (
-                  <div>
+                  <div className="border-b-2  md:border-none">
                     {/* MENU ITEMS CONTAINER */}
-                    <div className=" mx-auto w-10/12  py-2 flex flex-row justify-between items-center ">
+                    <div className=" md:mx-auto max;w-screen md:w-10/12  py-2 flex flex-row justify-between items-center ">
                       {/* MENU ITEM DETAILS */}
-                      <div className="w-7/12 flex flex-col">
+                      <div className=" w-7/12 md:w-7/12 flex flex-col">
                         <span className="text-lg font-extrabold">
                           {item?.card?.info?.name}
                         </span>
@@ -93,7 +93,7 @@ const RestaurantDetail = () => {
                       </div>
 
                       {/* MENU IMAGE AND ADD BUTTON */}
-                      <div className="relative w-3/12 ">
+                      <div className="relative w-5/12 md:w-3/12 ">
                         <img
                           className="w-full rounded-lg"
                           src={IMG_CDN_URL + item?.card?.info?.imageId}

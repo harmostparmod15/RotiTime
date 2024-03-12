@@ -42,15 +42,15 @@ const TopRestaurants = () => {
   return (
     <div className="w-10/12 mx-auto font-poppins relative ">
       {/*  header and search bar */}
-      <div className="w-full    flex justify-between   items-baseline">
-        <h1 className="text-3xl font-bold py-12 ">
+      <div className=" w-full    flex flex-col  md:flex-row justify-between   items-baseline">
+        <h1 className=" text-xl  md:text-3xl mx-auto md:mx-0 font-bold py-12 ">
           Top Restaurants Chains Near You
         </h1>
         {/*  search box  */}
-        <div className="">
+        <div className=" w-10/12 md:w-6/12 mx-auto">
           <input
             type="text"
-            className="rounded-l-full px-8 py-2 w-96 border text-black"
+            className="rounded-l-full px-8 py-2 w-8/12 md:w-9/12 border-2 text-black"
             value={searchInput}
             placeholder="Search for Restaurants"
             onChange={(e) => {
@@ -76,7 +76,8 @@ const TopRestaurants = () => {
       {/*  all restaurants */}
       <div
         className={
-          " justify-between flex flex-wrap border" + (addBlur && " blur-lg")
+          " items-center -center md:justify-between flex flex-col   md:flex-row flex-wrap  " +
+          (addBlur && " blur-lg")
         }
       >
         {topRestaurants.map((rest) => {

@@ -10,7 +10,9 @@ const StarterRestaurants = () => {
 
   return (
     <div className=" w-10/12 mx-auto font-poppins py-12">
-      <h1 className="text-3xl font-bold py-12 ">What's on your Mind ?</h1>
+      <h1 className="text-xl md:text-3xl text-center md:text-start  font-bold py-12 ">
+        What's on your Mind ?
+      </h1>
 
       <div className="flex flex-row   overflow-x-scroll    w-full ">
         {starterRestaurants.map((rest) => (

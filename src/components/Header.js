@@ -8,7 +8,7 @@ const Header = () => {
   const cartItems = useSelector((store) => store.cart.items);
 
   return (
-    <div className="px-24  pt-2 top-0 sticky z-20   flex justify-between bg-slate-200    shadow-md font-poppins">
+    <div className="max-w-screen    md:px-24    pt-2 top-0 sticky z-20   flex justify-between bg-slate-200    shadow-md font-poppins">
       {/*  TITLE  */}
       <Link to={"/"}>
         <div className="flex relative  w-40  ">
@@ -21,24 +21,24 @@ const Header = () => {
       {/*  NAV LINKS */}
       <ul className="py-4 flex  justify-between w-6/12 text-xl ">
         <li>
-          <Link className="text-red-600 " to="/">
+          <Link className="text-red-600 hidden md:block " to="/">
             Home
           </Link>{" "}
         </li>
         <li>
-          <Link className="links" to="/about">
+          <Link className=" hidden md:block " to="/about">
             About
           </Link>
         </li>
         <li>
-          <Link className="links" to="/contact">
+          <Link className=" hidden md:block " to="/contact">
             Contact{" "}
           </Link>
         </li>
 
         <li>
           {" "}
-          <Link className="links" to="/instamart">
+          <Link className=" hidden md:block " to="/instamart">
             Instamart{" "}
           </Link>{" "}
         </li>

@@ -13,7 +13,6 @@ import { useNavigate } from "react-router-dom";
 
 const Body = () => {
   const store = useSelector((store) => store?.restaurant?.restaurants);
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
