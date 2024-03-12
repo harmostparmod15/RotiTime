@@ -9,23 +9,12 @@ const Cart = () => {
 
   const cartItems = useSelector((store) => store.cart.items);
   const dispatch = useDispatch();
+
   const handleClearCart = () => {
     dispatch(clearCart());
   };
 
-  // LOGIC FOR SHOWING CART EMPTY OR WITH PRODUCTS
-  const cartLengthChecker = (cartItems) => {
-    {
-      if (cartItems.length > 0) {
-        setCounter(1);
-      }
-    }
-  };
-  useEffect(() => {
-    cartLengthChecker(cartItems);
-  }, []);
-
-  return counter === 0 ? (
+  return cartItems.length === 0 ? (
     // EMPTY CARD WARNING
     <div className="flex font-poppins w-5/12 mx-auto h-96  items-center justify-center text-3xl">
       <div>
@@ -38,17 +27,17 @@ const Cart = () => {
   ) : (
     //  MAIN CART COMPONENT
     <div
-      className="w-5/12 border flex flex-col  mx-auto
+      className="w-5/12 border flex flex-col  mx-auto my-8 h-screen
     "
     >
       {/*  cart items count and clear all btn */}
-      <div className="flex  justify-around items-baseline font-poppins">
-        <h1 className="font-extrabold mt-12 font-poppins text-2xl">
+      <div className=" flex py-4 justify-between px-4">
+        <h1 className="font-extrabold font-poppins text-2xl">
           cart items {cartItems.length}
-          {/* {console.log(cartItems[0]?.card?.info)} */}
         </h1>
+        {/*  clear all btn */}
         <button
-          className="bg-green-500 text-white px-8 rounded-md h-10 hover:bg-white hover:text-green-500 hover:border hover:border-green-500 transition-all duration-500"
+          className="bg-red-500 text-white px-8  h-10 rounded-md  hover:bg-white hover:text-red-500 hover:border  transition-all duration-500"
           onClick={() => {
             handleClearCart();
             setCounter(0);
@@ -56,22 +45,22 @@ const Cart = () => {
         >
           clear all
         </button>
+        {/* procedd to payment btn */}
+        {cartItems.length !== 0 ? (
+          <Link to={"/payment"}>
+            <button className="bg-green-500 px-4 py-2  text-white rounded-lg hover:scale-90 hover:rounded-lg transition-all duration-500">
+              Order now
+            </button>
+          </Link>
+        ) : null}
       </div>
 
       {/*  cart items */}
-      <div className="flex flex-col flex-wrap">
+      <div className="flex h-40 w-full flex-wrap my-12">
         {cartItems.map((item) => (
           <FoodItem key={item?.card?.info?.id} {...item?.card?.info} />
         ))}
       </div>
-
-      {cartItems.length !== 0 ? (
-        <Link className=" w-11/12 mx-auto" to={"/payment"}>
-          <button className="bg-green-500 px-4 py-2 mt-4 text-white rounded-lg hover:scale-90 hover:rounded-lg transition-all duration-500">
-            Proceed to payment
-          </button>
-        </Link>
-      ) : null}
     </div>
   );
 };

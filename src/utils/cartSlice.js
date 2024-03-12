@@ -7,10 +7,15 @@ const cartSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
+      console.log("ac pl", action.payload.card.info.id);
       state.items.push(action.payload);
     },
     removeItem: (state, action) => {
-      state.items.pop(action.payload);
+      const copyState = [...state.items];
+      const itemsToRetain = copyState.filter(
+        (item) => item?.card?.info.id != action.payload
+      );
+      state.items = itemsToRetain;
     },
     clearCart: (state) => {
       state.items = [];

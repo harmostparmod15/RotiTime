@@ -9,27 +9,31 @@ import { API_URl } from "../utils/config.js";
 import StarterRestaurants from "./StarterRestaurants";
 import TopRestaurants from "./TopRestaurants.js";
 import Shimmer from "./Shimmer.js";
+import { useNavigate } from "react-router-dom";
 
 const Body = () => {
   const store = useSelector((store) => store?.restaurant?.restaurants);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   async function getRestaurants() {
-    const data = await fetch(API_URl);
+    try {
+      const data = await fetch(API_URl);
+      const json = await data.json();
+      dispatch(
+        addRestaurantData({
+          starterRestaurants:
+            json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info,
 
-    const json = await data.json();
-    console.log(json.data);
-    dispatch(
-      addRestaurantData({
-        starterRestaurants:
-          json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info,
-
-        topRestaurants:
-          json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-            ?.restaurants,
-      })
-    );
+          topRestaurants:
+            json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+              ?.restaurants,
+        })
+      );
+    } catch (error) {
+      navigate("/error");
+    }
   }
 
   useEffect(() => {

@@ -29,7 +29,7 @@ const Payment = () => {
 
     const animationTimeOut = setTimeout(() => {
       handleAnimation();
-    }, 200);
+    }, 50);
 
     handleClearCart();
 

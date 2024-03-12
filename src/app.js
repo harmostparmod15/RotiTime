@@ -17,6 +17,7 @@ import Instamart from "./components/Instamart";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Payment from "./components/Payment";
+import Error from "./components/Error";
 
 const AppLayout = () => {
   return (
@@ -64,6 +65,10 @@ const appRouter = createBrowserRouter([
         element: <Payment />,
       },
     ],
+  },
+  {
+    path: "/error",
+    element: <Error />,
   },
 ]);
 
