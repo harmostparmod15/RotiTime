@@ -1,8 +1,11 @@
 import React from "react";
 import ReactDom from "react-dom/client";
 
-import { Outlet, RouterProvider } from "react-router";
-import { createBrowserRouter } from "react-router-dom/dist";
+import {
+  Outlet,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom/dist";
 import { Provider } from "react-redux/dist/react-redux";
 
 import store from "./utils/store";

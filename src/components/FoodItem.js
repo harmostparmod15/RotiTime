@@ -7,7 +7,6 @@ const FoodItem = ({ id, name, imageId, price, defaultPrice }) => {
 
   const clearCartItems = (id) => {
     dispatch(removeItem(id));
-    console.log("clicked on ", id);
   };
 
   return (

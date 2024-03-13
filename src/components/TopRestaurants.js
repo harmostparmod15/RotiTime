@@ -26,7 +26,6 @@ const TopRestaurants = () => {
 
   const handleSearchRestaurant = (inputQuery) => {
     const data = filterData(inputQuery, topRestaurants);
-    console.log("sr rest", searchedRestaurant);
     // setFilteredRestaurants(data);
     dispatch(addSearchedRestaurantData(data));
     setAddBlur(true);

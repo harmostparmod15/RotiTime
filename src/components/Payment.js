@@ -23,7 +23,6 @@ const Payment = () => {
 
   useEffect(() => {
     if (cartItems.length === 0) {
-      console.log("nl cart");
       navigate("/");
     }
 

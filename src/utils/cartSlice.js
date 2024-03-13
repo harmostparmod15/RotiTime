@@ -7,7 +7,6 @@ const cartSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      console.log("ac pl", action.payload.card.info.id);
       state.items.push(action.payload);
     },
     removeItem: (state, action) => {

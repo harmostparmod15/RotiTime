@@ -27,7 +27,7 @@ const Cart = () => {
   ) : (
     //  MAIN CART COMPONENT
     <div
-      className="w-10/12 md:w-5/12 border flex flex-col font-poppins  mx-auto my-8 h-screen  overflow-scroll  
+      className="w-full md:w-5/12 border flex flex-col font-poppins  mx-auto my-8 h-screen  overflow-scroll  
     "
     >
       {/*  cart items count and clear all btn */}

@@ -5,7 +5,6 @@ const Error = () => {
   const navigate = useNavigate();
 
   const handleBackToHome = () => {
-    console.log("navigate");
     navigate("/");
   };
 
