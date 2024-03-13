@@ -1,6 +1,6 @@
 # RotiTime - good food within minutes
 
-[Live Project Link](https://roti-timee.vercel.app/)
+[Live Project Link](https://roti-time.vercel.app/)
 
 ![image](./src/assets/images/rotiTime-preview.png "preview site ")
 
