@@ -15,6 +15,8 @@ const RestaurantDetail = () => {
   const resId = params.id;
   const restaurant = useRestaurantDetail(resId);
 
+  console.log(restaurant);
+
   const [changeIndex, setChangeIndex] = useState(2);
 
   let menu =
@@ -45,25 +47,25 @@ const RestaurantDetail = () => {
           {/* RESTAURANT NAME AND AREA */}
           <div>
             <h2 className="text-xl font-bold bg-green-100">
-              {restaurant.cards[0]?.card?.card?.info?.name}
+              {restaurant.cards[2]?.card?.card?.info?.name}
             </h2>
             <h2 className="text-lg opacity-80">
-              {restaurant.cards[0]?.card?.card?.info?.cuisines}
+              {restaurant.cards[2]?.card?.card?.info?.cuisines}
             </h2>
             <h3 className="text-lg opacity-80">
-              {restaurant.cards[0]?.card?.card?.info?.city}
+              {restaurant.cards[2]?.card?.card?.info?.city}
             </h3>
           </div>
           {/* RESTAURANT RATING */}
           <div className=" rounded-lg flex  items-center">
             <h3 className="text-green-400 font-bold flex gap-1  items-baseline ">
-              {restaurant.cards[0]?.card?.card?.info?.avgRating}
+              {restaurant.cards[2]?.card?.card?.info?.avgRating}
               <span>
                 <img className="w-4 " src={starImage}></img>
               </span>
             </h3>
             <h3 className="text-lg opacity-80">
-              {restaurant.cards[0]?.card?.card?.info?.totalRatings}+
+              {restaurant.cards[2]?.card?.card?.info?.totalRatings}
             </h3>
           </div>
         </div>
