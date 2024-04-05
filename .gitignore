@@ -47,5 +47,5 @@ Thumbs.db
 
 
 .parcel-cache
-
+.env
 /coverage

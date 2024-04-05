@@ -9,19 +9,16 @@ const StarterRestaurants = () => {
   if (!starterRestaurants) return null;
 
   return (
-    <div className=" w-10/12 mx-auto font-poppins py-12">
+    <div className=" w-10/12 mx-auto font-poppins py-12 ">
       <h1 className="text-xl md:text-3xl text-center md:text-start  font-bold py-12 ">
         What's on your Mind ?
       </h1>
 
-      <div className="flex flex-row   overflow-x-scroll    w-full ">
+      <div className="w-full  flex overflow-x-scroll ">
         {starterRestaurants.map((rest) => (
-          <div
-            key={rest.id}
-            className="  w-5/12 text-center flex flex-col gap-2"
-          >
-            <img src={IMG_CDN_URL + rest?.imageId}></img>
-            <h1 className="w-40">{rest.action.text}</h1>
+          <div key={rest.id} className="   mx-4   text-center ">
+            <img className="w-full " src={IMG_CDN_URL + rest?.imageId}></img>
+            <h1 className="w-40 opacity-0">{rest.action.text}</h1>
           </div>
         ))}
       </div>
